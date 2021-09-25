@@ -1,0 +1,6 @@
+version: '3'
+
+services:
+  REPLACEME:
+    container_name: REPLACEME-dev
+    command: yarn dev -L

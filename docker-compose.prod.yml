@@ -1,0 +1,6 @@
+version: '3'
+
+services:
+  REPLACEME:
+    container_name: REPLACEME
+    command: yarn start

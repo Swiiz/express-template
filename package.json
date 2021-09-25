@@ -1,0 +1,70 @@
+{
+  "name": "REPLACEME",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "author": "Swiiz (github.com/Swiiz)",
+  "private": true,
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "./node_modules/.bin/cross-env NODE_ENV=development nodemon src/index.js",
+    "docker:prod": "docker-compose -f docker-compose.yml -f docker-compose.prod.yml up",
+    "docker:dev": "docker-compose -f docker-compose.yml -f docker-compose.dev.yml up",
+    "lint": "eslint . --fix",
+    "lint:check": "eslint .",
+    "prepare": "husky install"
+  },
+  "devDependencies": {
+    "eslint": "^7.32.0",
+    "husky": "^7.0.2",
+    "lint-staged": "^11.1.2",
+    "nodemon": "^2.0.13"
+  },
+  "dependencies": {
+    "cross-env": "^7.0.3",
+    "crossenv": "^0.0.2-security",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "express": "^4.17.1",
+    "prettier": "^2.4.1"
+  },
+  "eslintConfig": {
+    "env": {
+      "browser": true,
+      "commonjs": true,
+      "es2021": true
+    },
+    "extends": [
+      "eslint:recommended",
+      "prettier"
+    ],
+    "plugins": [
+      "prettier"
+    ],
+    "parserOptions": {
+      "ecmaVersion": 12
+    },
+    "rules": {
+      "prettier/prettier": "error",
+      "indent": [
+        "error",
+        2
+      ],
+      "linebreak-style": [
+        "error",
+        "unix"
+      ],
+      "quotes": [
+        "error",
+        "double"
+      ],
+      "semi": [
+        "error",
+        "always"
+      ]
+    }
+  },
+  "lint-staged": {
+    "*.js": "eslint --cache --fix"
+  }
+}
